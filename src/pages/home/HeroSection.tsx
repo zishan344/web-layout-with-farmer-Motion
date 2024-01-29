@@ -27,10 +27,13 @@ const HeroSection = () => {
     },
   };
   const laptop = {
-    initial: { y: 0 },
+    initial: { y: 0, rotate: 0, scale: 5 },
     animate: {
       y: 20,
+      rotate: -30,
+      scale: 1,
       transition: {
+        duration: 1,
         y: {
           duration: 2,
           repeat: Infinity,
@@ -41,40 +44,39 @@ const HeroSection = () => {
     },
   };
   return (
-    <Container
-      className=" h-[calc(100vh-88px)]  grid 
+    <div className="overflow-hidden">
+      <Container
+        className=" h-[calc(100vh-88px)]  grid 
     grid-cols-1 lg:grid-cols-2 place-content-center ">
-      <motion.div variants={intro} initial="hidden" animate="visible">
-        <motion.h1
-          variants={introChildren}
-          className=" text-5xl lg:text-8xl font-bold text-nowrap">
-          <span className="text-gray">Don't worry</span>
-          <br />
-          <span>We'll fix it.</span>
-        </motion.h1>
-        <motion.p
-          variants={introChildren}
-          className="text-dark-gray  max-w-[50c] mt-10 mb-5 text-lg">
-          Welcome to <span className=" font-semibold">iRepair</span> your one
-          step place for all kinds of
-          <span className=" font-semibold"> macbook repair</span> and diagnostic{" "}
-        </motion.p>
-        <motion.div variants={introChildren}>
-          <Button>Book a service</Button>
+        <motion.div variants={intro} initial="hidden" animate="visible">
+          <motion.h1
+            variants={introChildren}
+            className=" text-5xl lg:text-8xl font-bold text-nowrap">
+            <span className="text-gray">Don't worry</span>
+            <br />
+            <span>We'll fix it.</span>
+          </motion.h1>
+          <motion.p
+            variants={introChildren}
+            className="text-dark-gray  max-w-[50c] mt-10 mb-5 text-lg">
+            Welcome to <span className=" font-semibold">iRepair</span> your one
+            step place for all kinds of
+            <span className=" font-semibold"> macbook repair</span> and
+            diagnostic{" "}
+          </motion.p>
+          <motion.div variants={introChildren}>
+            <Button>Book a service</Button>
+          </motion.div>
         </motion.div>
-      </motion.div>
-      <motion.div
-        variants={laptop}
-        initial="initial"
-        animate="animate"
-        className="mt-10 w-3/4 lg:w-full mx-auto">
-        <img
-          className="rotate-[-30deg] object-contain h-[95%]"
-          src={macbook}
-          alt=""
-        />
-      </motion.div>
-    </Container>
+        <motion.div
+          variants={laptop}
+          initial="initial"
+          animate="animate"
+          className="mt-10 w-3/4 lg:w-full mx-auto">
+          <img className="  object-contain h-[95%]" src={macbook} alt="" />
+        </motion.div>
+      </Container>
+    </div>
   );
 };
 

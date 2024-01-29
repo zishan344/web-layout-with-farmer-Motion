@@ -3,9 +3,9 @@ import HeroSection from "./HeroSection";
 
 const Home = () => {
   return (
-    <Container>
+    <div>
       <HeroSection />
-    </Container>
+    </div>
   );
 };
 
