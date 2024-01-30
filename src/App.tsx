@@ -1,6 +1,6 @@
-import MainLayout from "./components/ui/layouts/MainLayout";
+import MainLayout from "./components/layouts/MainLayout";
 
-import Navbar from "./components/ui/layouts/Navbar";
+import Navbar from "./components/layouts/Navbar";
 
 function App() {
   return (
